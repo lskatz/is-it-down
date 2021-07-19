@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: apt-get
         run:  |
-          sudo apt-get install -y sra-toolkit tree
+          sudo apt-get install -y sra-toolkit tree ca-certificates
       - name: esearch
         run:  |
           esearch -db biosample -query "SAMN14938803" >  SAMN14938803.xml
