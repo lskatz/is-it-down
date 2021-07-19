@@ -9,5 +9,5 @@ jobs:
   esearch:
     steps:
       - name: test
-      - run:  "echo testing 1 2 3"
+        run:  "echo testing 1 2 3"
 
