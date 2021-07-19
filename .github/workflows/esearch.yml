@@ -7,6 +7,7 @@ on:
 
 jobs:
   esearch:
+    runs-on: ubuntu-20.04
     steps:
       - name: test
         run:  "echo testing 1 2 3"
