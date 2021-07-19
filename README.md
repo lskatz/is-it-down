@@ -5,5 +5,5 @@ This is done through GitHub actions.
 
 # Statuses
 
-[![esearch](https://github.com/lskatz/is-it-down/actions/workflows/esearch.yml/badge.svg)](https://github.com/lskatz/is-it-down/actions/workflows/esearch.yml)
+[![esearch](https://github.com/lskatz/is-it-down/actions/workflows/esearch.yml/badge.svg?branch=main)](https://github.com/lskatz/is-it-down/actions/workflows/esearch.yml)
 
