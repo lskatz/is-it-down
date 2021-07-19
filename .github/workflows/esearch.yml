@@ -1,11 +1,36 @@
 name: esearch
 on: 
-  - push
-  - cron: '0 5 * * *'
+  push:
+    branches: [main, dev, testing-actions]
+  schedule:
+    - cron: '0 5 * * *'
+
+env:
+  ACC: "SAMN00860590"
 
 jobs:
   esearch:
+    runs-on: ubuntu-18.04
     steps:
-      - name: test
-      - run:  "echo testing 1 2 3"
+      - name: apt-get
+        run:  |
+          sudo apt-get install -y ncbi-entrez-direct tree ca-certificates
+      - name: esearch
+        run:  |
+          esearch -db biosample -query "${{ env.ACC }}" >  ${{ env.ACC }}.xml
+          cat ${{ env.ACC }}.xml
+      - name: efetch biosample
+        run:  |
+          cat ${{ env.ACC }}.xml | efetch > ${{ env.ACC }}.txt
+          cat ${{ env.ACC }}.txt
+          grep ${{ env.ACC }} ${{ env.ACC }}.txt
+      - name: efetch nucleotide
+        run:  |
+          cat ${{ env.ACC }}.xml | elink -target nuccore > ${{ env.ACC }}.nucl.xml
+          cat ${{ env.ACC }}.nucl.xml | xtract -format
+      - name: efetch fasta
+        run:  |
+          cat ${{ env.ACC }}.nucl.xml | efetch -format fasta > ${{ env.ACC }}.fasta
+          grep -A 1 ">" ${{ env.ACC }}.fasta
+
 
