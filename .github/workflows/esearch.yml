@@ -30,5 +30,7 @@ jobs:
           cat ${{ env.ACC }}.nucl.xml | xtract -format
       - name: efetch fasta
         run:
-          cat ${{ env.ACC }}.nucl.xml | efetch -format fasta
+          cat ${{ env.ACC }}.nucl.xml | efetch -format fasta > ${{ env.ACC }}.fasta
+          grep -A 1 ">" ${{ env.ACC }}.fasta
+
 
