@@ -1,1 +1,11 @@
+name: esearch
+on: 
+  - push
+  - cron: '0 5 * * *'
+
+jobs:
+  esearch:
+    steps:
+      - name: test
+      - run:  "echo testing 1 2 3"
 
