@@ -16,3 +16,7 @@ jobs:
         run:  |
           esearch -db biosample -query "SAMN14938803" >  SAMN14938803.xml
           cat SAMN14938803.xml
+      - name: efetch biosample
+        run:  |
+          cat SAMN14938803.xml | efetch | xtract -format
+
