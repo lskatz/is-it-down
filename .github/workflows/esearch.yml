@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: '0 5 * * *'
 
+env:
+  ACC: "SAMN14938803"
+
 jobs:
   esearch:
     runs-on: ubuntu-18.04
@@ -14,8 +17,8 @@ jobs:
           sudo apt-get install -y ncbi-entrez-direct tree ca-certificates
       - name: esearch
         run:  |
-          esearch -db biosample -query "SAMN14938803" >  SAMN14938803.xml
-          cat SAMN14938803.xml
+          esearch -db biosample -query "${{ env.ACC }}" >  ${{ env.ACC }}.xml
+          cat ${{ env.ACC }}
       - name: efetch biosample
         run:  |
           cat SAMN14938803.xml | efetch > SAMN14938803.txt
