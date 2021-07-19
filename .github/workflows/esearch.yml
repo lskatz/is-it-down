@@ -26,7 +26,7 @@ jobs:
           grep ${{ env.ACC }} ${{ env.ACC }}.txt
       - name: efetch nucleotide
         run:  |
-          cat ${{ env.ACC }}.xml | elink -target nucleotide > ${{ env.ACC }}.nucl.xml
+          cat ${{ env.ACC }}.xml | elink -target nuccore > ${{ env.ACC }}.nucl.xml
           cat ${{ env.ACC }}.nucl.xml | xtract -format
       - name: efetch fasta
         run:
