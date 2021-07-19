@@ -7,3 +7,6 @@ This is done through GitHub actions.
 
 [![esearch](https://github.com/lskatz/is-it-down/actions/workflows/esearch.yml/badge.svg?branch=main)](https://github.com/lskatz/is-it-down/actions/workflows/esearch.yml)
 
+# Contributing
+
+See [CONTRUBUTING.md](CONTRIBUTING.md)
