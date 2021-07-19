@@ -18,5 +18,14 @@ jobs:
           cat SAMN14938803.xml
       - name: efetch biosample
         run:  |
-          cat SAMN14938803.xml | efetch 
+          cat SAMN14938803.xml | efetch > SAMN14938803.txt
+          cat SAMN14938803.txt
+          grep SAMN14938803 SAMN14938803.txt
+      - name: efetch nucleotide
+        run:  |
+          cat SAMN14938803.xml | elink -target nucleotide > SAMN14938803.nucl.xml
+          cat SAMN14938803.nucl.xml | xtract -format
+      - name: efetch fasta
+        run:
+          cat SAMN14938803.nucl.xml | efetch -format fasta
 
