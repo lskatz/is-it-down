@@ -6,7 +6,7 @@ on:
     - cron: '0 5 * * *'
 
 env:
-  ACC: "SAMN14938803"
+  ACC: "SAMN01823701"
 
 jobs:
   esearch:
