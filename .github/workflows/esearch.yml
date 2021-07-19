@@ -1,7 +1,9 @@
 name: esearch
 on: 
-  - push
-  - cron: '0 5 * * *'
+  push:
+    branches: [main, dev, testing-actions]
+  schedule:
+    - cron: '0 5 * * *'
 
 jobs:
   esearch:
