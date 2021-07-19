@@ -29,7 +29,7 @@ jobs:
           cat ${{ env.ACC }}.xml | elink -target nuccore > ${{ env.ACC }}.nucl.xml
           cat ${{ env.ACC }}.nucl.xml | xtract -format
       - name: efetch fasta
-        run:
+        run:  |
           cat ${{ env.ACC }}.nucl.xml | efetch -format fasta > ${{ env.ACC }}.fasta
           grep -A 1 ">" ${{ env.ACC }}.fasta
 
