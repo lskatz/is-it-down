@@ -9,6 +9,10 @@ jobs:
   esearch:
     runs-on: ubuntu-20.04
     steps:
-      - name: test
-        run:  "echo testing 1 2 3"
-
+      - name: apt-get
+        run:  |
+          sudo apt-get install -y sra-toolkit tree
+      - name: esearch
+        run:  |
+          esearch -db biosample -query "SAMN14938803" >  SAMN14938803.xml
+          cat SAMN14938803.xml
