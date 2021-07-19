@@ -18,5 +18,5 @@ jobs:
           cat SAMN14938803.xml
       - name: efetch biosample
         run:  |
-          cat SAMN14938803.xml | efetch | xtract -format
+          cat SAMN14938803.xml | efetch 
 
