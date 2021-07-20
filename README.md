@@ -28,6 +28,9 @@ In this example, we are highlighting these two commands and their output.
 
 Thus letting you know that the `esearch` command with the Eutils API is still running.
 
+...as recently as July 20!  
+![image](https://user-images.githubusercontent.com/14798/126338625-aa4dfc2e-96a0-425c-8cbb-2f80399fd4e5.png)
+
 # Contributing
 
 See [CONTRUBUTING.md](CONTRIBUTING.md)
